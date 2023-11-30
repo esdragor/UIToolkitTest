@@ -500,12 +500,24 @@ MonoBehaviour:
   - Language: Francais
     Title: Un jeu de chat
     Login: 'Bonjour '
+    LaunchBtn: Lancer la bataille
+    Options: Options
+    Credits: Credits
+    Quit: Quitter
   - Language: English
     Title: cat game
     Login: 'Hi '
+    LaunchBtn: Launch battle
+    Options: Options
+    Credits: Credits
+    Quit: Quit
   - Language: Meow
     Title: mew rrrrrrrrr
     Login: 'Miaou '
+    LaunchBtn: mew
+    Options: rrrr
+    Credits: meeeew
+    Quit: nya
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,7 +630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uiDocument: {fileID: 1893518746}
-  _backgroundOptions: {fileID: 0}
+  _backgroundOptions: {fileID: 2800000, guid: d0db5be3af3727748aa886477f651de5, type: 3}
   languages:
   - Francais
   - English

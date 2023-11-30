@@ -1,0 +1,79 @@
+{
+  "dialogues": [
+    {
+      "id": 1,
+      "speaker": "Jean",
+      "text": "Salut Luc. Tu as entendu parler de la rumeur sur les combats de chats clandestins ?",
+      "choices": [
+        {
+          "id": 1,
+          "text": "Oui, j'en ai entendu parler. Mr Sweatie est apparemment le champion en titre !",
+          "nextDialogueID": 2
+        },
+        {
+          "id": 2,
+          "text": "Non, je n'ai aucune idée de quoi tu parles.",
+          "nextDialogueID": 3
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "Luc",
+      "text": "Incroyable ! Mr Sweatie est vraiment redoutable. On dit qu'il n'a jamais perdu un combat.",
+      "choices": [
+        {
+          "id": 3,
+          "text": "Je me demande comment ces combats sont organisés...",
+          "nextDialogueID": 4
+        },
+        {
+          "id": 4,
+          "text": "C'est horrible, il faut arrêter ça !",
+          "nextDialogueID": 5
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "Jean",
+      "text": "Certains disent que c'est un réseau secret. Les paris sont énormes.",
+      "choices": [
+        {
+          "id": 5,
+          "text": "C'est vraiment inquiétant...",
+          "nextDialogueID": 6
+        },
+        {
+          "id": 6,
+          "text": "Je suis curieux de voir comment ces combats se déroulent.",
+          "nextDialogueID": 7
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "Luc",
+      "text": "Tu as raison, ça doit cesser. On devrait en informer les autorités.",
+      "choices": []
+    },
+    {
+      "id": 5,
+      "speaker": "Jean",
+      "text": "Absolument. Ces activités doivent être arrêtées au plus vite.",
+      "choices": []
+    },
+    {
+      "id": 6,
+      "speaker": "Jean",
+      "text": "Moi aussi, mais la sécurité est prioritaire. Il vaut mieux ne pas s'en mêler.",
+      "choices": []
+    },
+    {
+      "id": 7,
+      "speaker": "Jean",
+      "text": "Je ne suis pas sûr que ce soit une bonne idée. Risquer sa sécurité n'en vaut pas la peine.",
+      "choices": []
+    }
+  ]
+}

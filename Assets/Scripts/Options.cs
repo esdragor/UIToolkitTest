@@ -77,7 +77,6 @@ public class Options : UIParent
 
     private void changeLanguage(ChangeEvent<string> evt)
     {
-        Debug.Log("change language");
         onLanguageChange?.Invoke(evt.newValue);
     }
 

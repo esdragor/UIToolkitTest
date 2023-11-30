@@ -12,6 +12,10 @@ public struct LanguageDictionaryTarget
     public string Language;
     public string Title;
     public string Login;
+    public string LaunchBtn;
+    public string Options;
+    public string Credits;
+    public string Quit;
 }
 
 public class Menu : UIParent
@@ -33,6 +37,10 @@ public class Menu : UIParent
     private Label LoginLabel;
     private string loginTxt;
     private Label _Title;
+    private Button _LaunchBattleBtn;
+    private Button _OptionsBtn;
+    private Button _CreditsBtn;
+    private Button _QuitBtn;
     private LanguageDictionaryTarget currentLanguage;
 
     public void Init()
@@ -59,6 +67,10 @@ public class Menu : UIParent
         currentLanguage = LanguageDictionaryTarget.Find(x => x.Language == language);
         _Title.text = currentLanguage.Title;
         LoginLabel.text = currentLanguage.Login + loginTxt;
+        _LaunchBattleBtn.text = currentLanguage.LaunchBtn;
+        _OptionsBtn.text = currentLanguage.Options;
+        _CreditsBtn.text = currentLanguage.Credits;
+        _QuitBtn.text = currentLanguage.Quit;
     }
 
     // private void UpdateText(LanguageMode language)
@@ -92,12 +104,14 @@ public class Menu : UIParent
     protected override void InitButtons()
     {
         parentMenuBtn = _root.Q<VisualElement>("BtnMenuParent");
-        var button = _root.Q<Button>("LaunchBattleBtn");
-        var quitButton = _root.Q<Button>("QuitBtn");
-        var optionsButton = _root.Q<Button>("OptionsBtn");
-        optionsButton.RegisterCallback<ClickEvent>(OpenOptions);
-        quitButton.RegisterCallback<ClickEvent>(QuitGame);
-        button.RegisterCallback<ClickEvent, string>(LaunchGame, "nya ?");
+        _OptionsBtn = _root.Q<Button>("OptionsBtn");
+        _LaunchBattleBtn = _root.Q<Button>("LaunchBattleBtn");
+        _CreditsBtn = _root.Q<Button>("CreditsBtn");
+        _QuitBtn = _root.Q<Button>("QuitBtn");
+        
+        _OptionsBtn.RegisterCallback<ClickEvent>(OpenOptions);
+        _QuitBtn.RegisterCallback<ClickEvent>(QuitGame);
+        _LaunchBattleBtn.RegisterCallback<ClickEvent, string>(LaunchGame, "nya ?");
     }
 
     void LaunchGame(ClickEvent ev, string str)

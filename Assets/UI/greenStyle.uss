@@ -9,3 +9,8 @@
 .red:hover {
     background-color: rgb(255, 0, 0);
 }
+
+Button.bigger:hover {
+    width: 105%;
+    height: 30%;
+}

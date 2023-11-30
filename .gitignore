@@ -14,3 +14,7 @@ Assembly-CSharp-Editor.csproj
 Assembly-CSharp.csproj
 
 UIToolkit.sln
+
+Temp/
+
+UIToolkitTest.sln
