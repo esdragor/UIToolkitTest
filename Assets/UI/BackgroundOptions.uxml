@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="Blur" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Blur-PNG-Photos.png?fileID=2800000&amp;guid=474bedf807e88d847a952cf13dd2e12b&amp;type=3#Blur-PNG-Photos&apos;);" />
+    <ui:VisualElement name="BackgroundOptions" style="flex-grow: 1; align-items: flex-start; justify-content: space-between; align-self: auto; flex-direction: column; flex-wrap: nowrap; height: 883px; background-color: rgba(255, 255, 255, 0); background-image: url(&apos;project://database/Assets/Art/catTongue.jpg?fileID=2800000&amp;guid=d0db5be3af3727748aa886477f651de5&amp;type=3#catTongue&apos;); display: flex; margin-top: 5%; margin-right: 5%; margin-bottom: 5%; margin-left: 5%; position: absolute; width: 1723px; top: 0; -unity-background-image-tint-color: rgb(255, 255, 255);">
+        <ui:GroupBox style="justify-content: flex-start; align-items: auto; flex-direction: column; align-self: flex-start; height: 100%; width: 100%;">
+            <ui:Button text="X" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CloseOptionsBtn" class="yellow" style="justify-content: space-around; align-items: auto; background-image: none; height: 50px; flex-direction: column; align-self: flex-start; width: 50px; font-size: 40px;" />
+            <ui:VisualElement style="flex-grow: 1; align-items: flex-start; align-self: flex-start; width: 371px; top: 5%;">
+                <ui:TextField picking-mode="Ignore" label="Login" value="RandomGuy" name="LoginOption" />
+                <ui:DropdownField label="Dropdown" index="-1" name="LanguageDropdown" style="margin-top: 20px;" />
+            </ui:VisualElement>
+        </ui:GroupBox>
+    </ui:VisualElement>
+</ui:UXML>
