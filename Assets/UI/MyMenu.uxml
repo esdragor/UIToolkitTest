@@ -13,12 +13,4 @@
             <ui:ProgressBar value="0" title="                                                                         " name="NyahBar" high-value="1" style="justify-content: space-around; align-items: center; align-self: center; font-size: 25px; flex-direction: column; height: 50px; -unity-text-align: lower-center; text-overflow: clip; scale: 1 1; visibility: hidden; width: 700px; flex-wrap: wrap; transform-origin: center;" />
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:VisualElement name="BackgroundBattle" style="flex-grow: 1; align-items: flex-start; justify-content: space-between; align-self: auto; flex-direction: row; flex-wrap: nowrap; height: 301px; background-color: rgb(255, 0, 0); background-image: none; display: none;">
-        <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" style="visibility: hidden; display: flex;" />
-        <ui:Button text="Quit" parse-escape-sequences="true" display-tooltip-when-elided="true" name="QuitBtn" class="yellow" style="justify-content: space-around; align-items: auto; background-image: url(&apos;project://database/Assets/UI/UnityDefaultRuntimeTheme.tss?fileID=8228938214290033325&amp;guid=154665ab0c379c44989aeba79932cba1&amp;type=3#console.erroricon&apos;); height: 75px; flex-direction: column; align-self: auto; width: 75px;" />
-        <ui:VisualElement name="VisualElement2" style="flex-grow: 1; align-items: center; justify-content: flex-end; align-self: center; flex-direction: column-reverse; width: 1161px; -unity-text-align: upper-center; flex-basis: 187px; position: absolute; left: 418px; top: 586px; height: 45px;">
-            <ui:ProgressBar value="0" title="Nya ?                                                                         " name="NyahBar" high-value="1" style="justify-content: flex-end; align-items: center; align-self: stretch; font-size: 25px; flex-direction: column-reverse; height: 25px; -unity-text-align: lower-center; text-overflow: clip; white-space: nowrap; scale: 1 1; visibility: hidden;" />
-            <ui:Button text="Launch Battle" parse-escape-sequences="true" display-tooltip-when-elided="true" name="MyBtn" style="justify-content: center; align-items: auto;" />
-        </ui:VisualElement>
-    </ui:VisualElement>
 </ui:UXML>

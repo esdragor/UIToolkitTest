@@ -7,12 +7,20 @@ public class UIManager : MonoBehaviour
     
     private void Start()
     {
-        Menu.OnOpenOptions += _options.OpenOptions;
-        Options.onLoginChange += _menu.UpdateLoginText;
-        Options.onLanguageChange += _menu.UpdateLanguage;
-        Options.onLanguageChange += _options.UpdateLanguage;
+        _menu.OnOpenOptions += _options.OpenOptions;
+        _options.onLoginChange += _menu.UpdateLoginText;
+        _options.onLanguageChange += _menu.UpdateLanguage;
+        _options.onLanguageChange += _options.UpdateLanguage;
         
         _menu.Init();
         _options.Init();
+    }
+    
+    private void OnDisable()
+    {
+        _menu.OnOpenOptions -= _options.OpenOptions;
+        _options.onLoginChange -= _menu.UpdateLoginText;
+        _options.onLanguageChange -= _menu.UpdateLanguage;
+        _options.onLanguageChange -= _options.UpdateLanguage;
     }
 }

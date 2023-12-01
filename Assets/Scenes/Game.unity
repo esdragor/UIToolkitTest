@@ -123,6 +123,82 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &385721650
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 385721652}
+  - component: {fileID: 385721651}
+  - component: {fileID: 385721653}
+  m_Layer: 0
+  m_Name: Pause
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &385721651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385721650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: d725c35ac698aa34dbf2452a98b1b97a, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 32af3704228a7bd4ebbab1d6e34936ef,
+    type: 3}
+  m_SortingOrder: 1
+--- !u!4 &385721652
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385721650}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &385721653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385721650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 560fb4622bc596e429946580fe8d00ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uiDocument: {fileID: 385721651}
+  LanguageDictionaryTarget:
+  - Language: Francais
+    Resume: retour sur le jeu
+    Options: Options
+    Quit: 'retour '
+  - Language: English
+    Resume: Resume
+    Options: Settings
+    Quit: Return to Desktop
+  - Language: Meow
+    Resume: mphhh shhh
+    Options: meow
+    Quit: ssssssssss
 --- !u!1 &793778655
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,6 +548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog: {fileID: 882700223}
   options: {fileID: 1302206864}
+  pause: {fileID: 385721653}
 --- !u!114 &1302206864 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5524279479552308313, guid: e41ce47cee7e7844b80479dabc6d7de6,
@@ -561,3 +638,4 @@ SceneRoots:
   - {fileID: 882700225}
   - {fileID: 1952449041}
   - {fileID: 1224822183}
+  - {fileID: 385721652}

@@ -56,9 +56,8 @@ public class SpeakerData
 
 public class DialogueManager : UIParent
 {
-    public static event Action OnEndOfDialogue; 
+    public event Action OnEndOfDialogue; 
     
-    [SerializeField] private UIDocument _uiDocument;
     [SerializeField] private Texture2D backgroundDialogue;
     [SerializeField] private string dialogueFileName;
     [SerializeField] private string labelTextname;
@@ -66,7 +65,6 @@ public class DialogueManager : UIParent
     [SerializeField] private SpeakerData[] dataSpeakers;
 
     private DialogueData dialogueData;
-    private VisualElement _root;
     private VisualElement backgroundDialogueElement;
     private int currentDialogueIndex;
     private List<Button> choiceButtons = new();
@@ -77,14 +75,14 @@ public class DialogueManager : UIParent
     private bool skipPrint = false;
 
 
-    public void Init()
+    public override void Init()
     {
+        base.Init();
         currentDialogueIndex = 0;
         InitPanels();
         InitButtons();
         InitOthers();
-        LoadDialogueData();
-        StartCoroutine(DisplayDialogue());
+        
     }
 
     private void Update()
@@ -94,10 +92,15 @@ public class DialogueManager : UIParent
             skipPrint = true;
         }
     }
-
-    void LoadDialogueData()
+    
+    public void LaunchDialogue()
     {
-        string filePath = Application.dataPath + "/" + dialogueFileName + ".json";
+        StartCoroutine(DisplayDialogue());
+    }
+
+    void LoadDialogueData(string language)
+    {
+        string filePath = Application.dataPath + "/" + dialogueFileName + "_" + language + ".json";
 
         if (File.Exists(filePath))
         {
@@ -106,7 +109,7 @@ public class DialogueManager : UIParent
         }
         else
         {
-            Debug.LogError("Fichier JSON introuvable !");
+            Debug.LogError(filePath + ": Fichier JSON introuvable !");
         }
     }
 
@@ -143,7 +146,7 @@ public class DialogueManager : UIParent
             {
                 dialogueText.text += word + " ";
                 if (!skipPrint)
-                    yield return new WaitForSeconds(0.1f);
+                    yield return new WaitForSeconds(Options.speedDialogue);
             }
             //dialogueText.text = currentDialogue.text;
 
@@ -223,5 +226,6 @@ public class DialogueManager : UIParent
 
     public override void UpdateLanguage(string language)
     {
+        LoadDialogueData(language);
     }
 }

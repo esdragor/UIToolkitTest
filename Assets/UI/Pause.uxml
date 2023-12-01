@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="Blur" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Blur-PNG-Photos.png?fileID=2800000&amp;guid=474bedf807e88d847a952cf13dd2e12b&amp;type=3#Blur-PNG-Photos&apos;);" />
+    <ui:VisualElement name="BackgroundOptions" style="flex-grow: 1; align-items: flex-start; justify-content: space-between; align-self: auto; flex-direction: column; flex-wrap: nowrap; height: 883px; background-color: rgba(255, 255, 255, 0); background-image: none; display: flex; margin-top: 5%; margin-right: 5%; margin-bottom: 5%; margin-left: 5%; position: absolute; width: 1723px; top: 0; -unity-background-image-tint-color: rgb(255, 255, 255);">
+        <ui:GroupBox style="justify-content: flex-start; align-items: auto; flex-direction: column; align-self: flex-start; height: 100%; width: 100%;">
+            <ui:VisualElement style="flex-grow: 1; align-items: flex-start; align-self: center; width: 35%; top: 5%; background-color: rgb(123, 123, 123);">
+                <ui:GroupBox style="height: 100%; width: 100%; justify-content: flex-start;">
+                    <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Resume" style="margin-top: 20%; height: 15%;" />
+                    <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Options" style="margin-top: 20%; height: 15%;" />
+                    <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Quit" style="margin-top: 20%; height: 15%;" />
+                </ui:GroupBox>
+            </ui:VisualElement>
+        </ui:GroupBox>
+    </ui:VisualElement>
+</ui:UXML>

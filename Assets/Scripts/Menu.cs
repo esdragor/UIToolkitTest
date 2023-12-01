@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 using UnityEngine.Video;
@@ -20,18 +21,15 @@ public struct LanguageDictionaryTargetMenu
 
 public class Menu : UIParent
 {
-    public static event Action OnOpenOptions;
+    public event Action OnOpenOptions;
 
-    [SerializeField] private UIDocument _uiDocument;
     [SerializeField] private RenderTexture _renderTextureLoader;
     [SerializeField] private Texture2D _textureBackground;
     [SerializeField] private VideoPlayer videoPlayer;
     [SerializeField] private float loadSpeed = 0.005f;
     [SerializeField] private List<LanguageDictionaryTargetMenu> LanguageDictionaryTarget;
 
-    private VisualElement _root;
     private VisualElement backgroundMenu;
-    private VisualElement backgroundBattle;
     private VisualElement parentMenuBtn;
     private ProgressBar ProgressBar;
     private Label LoginLabel;
@@ -43,13 +41,13 @@ public class Menu : UIParent
     private Button _QuitBtn;
     private LanguageDictionaryTargetMenu currentLanguage;
 
-    public void Init()
+    public override void Init()
     {
+        base.Init();
         currentLanguage = LanguageDictionaryTarget.Find(x => x.Language == "English");
         InitPanels();
         InitButtons();
         InitOthers();
-        
     }
 
     protected override void InitOthers()
@@ -73,8 +71,7 @@ public class Menu : UIParent
 
     public void UpdateLoginText(string str)
     {
-        if (str != null)
-            loginTxt = str;
+        loginTxt = str;
         LoginLabel.text = currentLanguage.Login + loginTxt;
     }
 
@@ -82,14 +79,11 @@ public class Menu : UIParent
     {
         _root = _uiDocument.rootVisualElement;
         backgroundMenu = _root.Q<VisualElement>("BackgroundMenu");
-        backgroundBattle = _root.Q<VisualElement>("BackgroundBattle");
         backgroundMenu.style.backgroundImage = new StyleBackground(_textureBackground);
 
         if (ProgressBar != null)
             ProgressBar.visible = false;
         backgroundMenu.style.display = DisplayStyle.Flex;
-
-        backgroundBattle.style.display = DisplayStyle.None;
     }
 
     protected override void InitButtons()
@@ -99,7 +93,7 @@ public class Menu : UIParent
         _LaunchBattleBtn = _root.Q<Button>("LaunchBattleBtn");
         _CreditsBtn = _root.Q<Button>("CreditsBtn");
         _QuitBtn = _root.Q<Button>("QuitBtn");
-        
+
         _OptionsBtn.RegisterCallback<ClickEvent>(OpenOptions);
         _QuitBtn.RegisterCallback<ClickEvent>(QuitGame);
         _LaunchBattleBtn.RegisterCallback<ClickEvent, string>(LaunchGame, "nya ?");
@@ -124,6 +118,7 @@ public class Menu : UIParent
     {
         ProgressBar.visible = true;
         ProgressBar.value = 0;
+        _Title.style.display = DisplayStyle.None;
         parentMenuBtn.style.display = DisplayStyle.None;
         videoPlayer.Play();
         backgroundMenu.style.backgroundImage = new StyleBackground(Background.FromRenderTexture(_renderTextureLoader));
@@ -141,6 +136,6 @@ public class Menu : UIParent
         parentMenuBtn.style.display = DisplayStyle.Flex;
         backgroundMenu.style.display = DisplayStyle.None;
 
-        backgroundBattle.style.display = DisplayStyle.Flex;
+        SceneManager.LoadScene(1);
     }
 }
