@@ -5,7 +5,9 @@
             <ui:Button text="X" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CloseOptionsBtn" class="yellow" style="justify-content: space-around; align-items: auto; background-image: none; height: 50px; flex-direction: column; align-self: flex-start; width: 50px; font-size: 40px;" />
             <ui:VisualElement style="flex-grow: 1; align-items: flex-start; align-self: flex-start; width: 371px; top: 5%;">
                 <ui:TextField picking-mode="Ignore" label="Login" value="RandomGuy" name="LoginOption" />
-                <ui:DropdownField label="Language" index="-1" name="LanguageDropdown" style="margin-top: 20px;" />
+                <ui:DropdownField label="Language" index="-1" name="LanguageDropdown" style="margin-top: 40px;" />
+                <ui:Toggle label="Fullscreen" name="Fullscreen" style="margin-top: 40px;" />
+                <ui:Slider picking-mode="Ignore" label="Slider" value="100" high-value="20" name="MasterVolume" low-value="-60" style="margin-top: 40px; width: 228%; height: 5%;" />
             </ui:VisualElement>
         </ui:GroupBox>
     </ui:VisualElement>

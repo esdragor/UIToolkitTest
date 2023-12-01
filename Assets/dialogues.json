@@ -3,7 +3,7 @@
     {
       "id": 1,
       "speaker": "Jean",
-      "text": "Salut Luc. Tu as entendu parler de la rumeur sur les combats de chats clandestins ?",
+      "text": "Salut Luc et %Login%. Vous avez entendu parler de la rumeur sur les combats de chats clandestins ?",
       "choices": [
         {
           "id": 1,
@@ -15,7 +15,8 @@
           "text": "Non, je n'ai aucune idée de quoi tu parles.",
           "nextDialogueID": 3
         }
-      ]
+      ],
+	  "mood": 0
     },
     {
       "id": 2,
@@ -25,14 +26,15 @@
         {
           "id": 3,
           "text": "Je me demande comment ces combats sont organisés...",
-          "nextDialogueID": 4
+          "nextDialogueID": 6
         },
         {
           "id": 4,
           "text": "C'est horrible, il faut arrêter ça !",
           "nextDialogueID": 5
         }
-      ]
+      ],
+	  "mood": 1
     },
     {
       "id": 3,
@@ -49,31 +51,60 @@
           "text": "Je suis curieux de voir comment ces combats se déroulent.",
           "nextDialogueID": 7
         }
-      ]
+      ],
+	  "mood": 1
     },
     {
       "id": 4,
       "speaker": "Luc",
       "text": "Tu as raison, ça doit cesser. On devrait en informer les autorités.",
-      "choices": []
+      "choices": [
+        {
+          "id": 99,
+          "text": "Finish",
+          "nextDialogueID": 99
+        }
+      ],
+	  "mood": 2
     },
     {
       "id": 5,
       "speaker": "Jean",
       "text": "Absolument. Ces activités doivent être arrêtées au plus vite.",
-      "choices": []
+      "choices": [
+        {
+          "id": 99,
+          "text": "Finish",
+          "nextDialogueID": 99
+        }
+      ],
+	  "mood": 2
     },
     {
       "id": 6,
       "speaker": "Jean",
       "text": "Moi aussi, mais la sécurité est prioritaire. Il vaut mieux ne pas s'en mêler.",
-      "choices": []
+      "choices": [
+        {
+          "id": 99,
+          "text": "Finish",
+          "nextDialogueID": 99
+        }
+      ],
+	  "mood": 3
     },
     {
       "id": 7,
       "speaker": "Jean",
       "text": "Je ne suis pas sûr que ce soit une bonne idée. Risquer sa sécurité n'en vaut pas la peine.",
-      "choices": []
+      "choices": [
+        {
+          "id": 99,
+          "text": "Finish",
+          "nextDialogueID": 99
+        }
+      ],
+	  "mood": 0
     }
   ]
 }

@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 using UnityEngine.Video;
 
 [Serializable]
-public struct LanguageDictionaryTarget
+public struct LanguageDictionaryTargetMenu
 {
     public string Language;
     public string Title;
@@ -27,7 +27,7 @@ public class Menu : UIParent
     [SerializeField] private Texture2D _textureBackground;
     [SerializeField] private VideoPlayer videoPlayer;
     [SerializeField] private float loadSpeed = 0.005f;
-    [SerializeField] private List<LanguageDictionaryTarget> LanguageDictionaryTarget;
+    [SerializeField] private List<LanguageDictionaryTargetMenu> LanguageDictionaryTarget;
 
     private VisualElement _root;
     private VisualElement backgroundMenu;
@@ -41,7 +41,7 @@ public class Menu : UIParent
     private Button _OptionsBtn;
     private Button _CreditsBtn;
     private Button _QuitBtn;
-    private LanguageDictionaryTarget currentLanguage;
+    private LanguageDictionaryTargetMenu currentLanguage;
 
     public void Init()
     {
@@ -49,6 +49,7 @@ public class Menu : UIParent
         InitPanels();
         InitButtons();
         InitOthers();
+        
     }
 
     protected override void InitOthers()
@@ -60,11 +61,8 @@ public class Menu : UIParent
 
     public override void UpdateLanguage(string language)
     {
-        // UpdateLoginText(language);
-        // //UpdateTitle(language);
-        // UpdateText("Login", LoginLabel, language);
-        // UpdateText("Title", _Title, language);
         currentLanguage = LanguageDictionaryTarget.Find(x => x.Language == language);
+        if (currentLanguage.Language == null) return;
         _Title.text = currentLanguage.Title;
         LoginLabel.text = currentLanguage.Login + loginTxt;
         _LaunchBattleBtn.text = currentLanguage.LaunchBtn;
@@ -72,13 +70,6 @@ public class Menu : UIParent
         _CreditsBtn.text = currentLanguage.Credits;
         _QuitBtn.text = currentLanguage.Quit;
     }
-
-    // private void UpdateText(LanguageMode language)
-    // {
-    //     LanguageDictionaryTarget target = LanguageDictionaryTarget.Find(x => x.Language == language);
-    //     _Title.text = target.Title;
-    //     LoginLabel.text = target.Login  + loginTxt;
-    // }
 
     public void UpdateLoginText(string str)
     {
